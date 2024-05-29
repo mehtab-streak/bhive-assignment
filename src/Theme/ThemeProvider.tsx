@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from 'react'
-import ThemeContext from './ThemeContext';
+import ThemeContext from './ThemeContext'
 
 interface ThemeProviderProps {
   children: ReactNode
@@ -7,18 +7,18 @@ interface ThemeProviderProps {
 
 const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   const { children } = props
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 786);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 786)
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 786);
-    };
+      setIsMobile(window.innerWidth < 786)
+    }
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize)
     // Clean up the event listener on component unmount
     return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   return (

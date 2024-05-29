@@ -1,35 +1,26 @@
-import React, { useContext } from 'react';
-import { makeStyles } from '@material-ui/styles';
+import React, { useContext } from 'react'
+import { makeStyles } from '@material-ui/styles'
 
-import Card from "../UI/Card";
-import { spacesUrl } from "../utils/const";
-import useFetch from '../hooks/useFetch';
-import assets from "../assets";
-import ThemeContext from '../Theme/ThemeContext';
+import Card from "../UI/Card"
+import { spacesUrl } from "../utils/const"
+import useFetch from '../hooks/useFetch'
+import assets from "../assets"
+import ThemeContext from '../Theme/ThemeContext'
 
-const { Arrow } = assets;
+const { Arrow } = assets
 
 interface Space {
-  name: string;
-  day_pass_price: string;
-  latitude: number;
-  longitude: number;
-  images: string[];
+  name: string
+  day_pass_price: string
+  latitude: number
+  longitude: number
+  images: string[]
 }
 
-
 const Spaces: React.FC = () => {
-  const classes = useStyles();
-  const { loading, data, error } = useFetch<Space[]>(spacesUrl);
-  const { isMobile } = useContext(ThemeContext);
-
-  if (loading) {
-    return <h1>Loading the spaces...</h1>;
-  }
-
-  if (error) {
-    return <h1>Error fetching spaces data</h1>;
-  }
+  const classes = useStyles()
+  const { loading, data, error } = useFetch<Space[]>(spacesUrl)
+  const { isMobile } = useContext(ThemeContext)
 
   return (
     <div className={classes.root}>
@@ -37,9 +28,11 @@ const Spaces: React.FC = () => {
         Our Space {!isMobile && 'Overview'}
         {isMobile && <img src={Arrow} alt='arrow' />}
       </h2>
+      <h2>{loading && 'Loading the spaces...'} </h2>
+      <h2>{error && 'Error fetching spaces'}</h2>
       <div className={classes.grid}>
         {data?.map((item) => {
-          const { name, day_pass_price, latitude, longitude, images } = item;
+          const { name, day_pass_price, latitude, longitude, images } = item
           const url = images[0]
           return (
             <Card
@@ -57,12 +50,12 @@ const Spaces: React.FC = () => {
               longitude={longitude}
               image_url={url}
             />
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
 const useStyles = makeStyles({
   root: {
@@ -103,4 +96,4 @@ const useStyles = makeStyles({
   },
 })
 
-export default Spaces;
+export default Spaces

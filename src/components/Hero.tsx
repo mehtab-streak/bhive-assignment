@@ -1,7 +1,11 @@
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles'
+
+import assets from '../assets'
+
+const { Coworking, HeroBg } = assets
 
 const Hero = () => {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <div className={classes.container}>
@@ -9,7 +13,7 @@ const Hero = () => {
         <figure className={classes.figure}>
           <img
             loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/bf553d4c128dfcf597910c1c32eb999f9c98631fbe46ac9aca923fabb70ee887?apiKey=23427d989e77478fa1b7f364de68a73c&"
+            src={HeroBg}
             alt="Main Banner Image"
             className={classes.image}
           />
@@ -22,14 +26,14 @@ const Hero = () => {
       <aside className={classes.aside}>
         <img
           loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/1c4d8ce0b70eddd50b896cfb414d88fd50e7cb0cb9b8e8b58b1e99cd6f7191fd?apiKey=23427d989e77478fa1b7f364de68a73c&"
+          src={Coworking}
           alt="Supporting Image"
           className={classes.asideImage}
         />
       </aside>
     </div>
-  );
-};
+  )
+}
 
 const useStyles = makeStyles({
   container: {
@@ -64,7 +68,6 @@ const useStyles = makeStyles({
     minHeight: '604px',
     overflow: 'hidden',
     '@media (max-width: 640px)': {
-      textAlign: 'center',
       minHeight: 'auto',
       height: 'auto', // sm:h-auto
     },
@@ -84,12 +87,14 @@ const useStyles = makeStyles({
   },
   heading: {
     position: 'relative',
-    alignSelf: 'center',
     marginTop: '7rem', // mt-28
     fontSize: '4.5rem', // text-7xl
     fontWeight: 'bold',
     letterSpacing: '-0.02em', // tracking-tighter
     color: '#1f2937', // text-primary-text
+    textAlign: 'left',
+
+
     '@media (max-width: 640px)': {
       marginTop: '0.25rem', // sm:mt-1
       fontSize: '1.25rem', // sm:text-xl
@@ -123,6 +128,6 @@ const useStyles = makeStyles({
       marginTop: '2.5rem', // max-md:mt-10
     },
   },
-});
+})
 
-export default Hero;
+export default Hero

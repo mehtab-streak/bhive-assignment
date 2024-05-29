@@ -1,5 +1,8 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/styles'
+import assets from '../assets'
+
+const { RightArrowDark, RightArrowLight, SpaceTitle, Map } = assets
 
 export interface CardProps {
   title: string
@@ -42,13 +45,13 @@ const Card: React.FC<CardProps> = (props) => {
         <header className={classes.header}>
           <h2>{location}</h2>
           <a href={`https://www.google.com/maps?q=${latitude},${longitude}`} target='_blank' className={classes.mapLink}>
-            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9e7be32f56ab46f34741c2d8e985e66680b7fbd99e04d450aaa9674d213be973?apiKey=23427d989e77478fa1b7f364de68a73c&" alt={logoImgAlt} />
+            <img loading="lazy" src={Map} alt={logoImgAlt} />
           </a>
         </header>
         <div className={classes.imageContainer}>
           <img loading="lazy" src={imgUrl} alt={mainImgAlt} className={classes.mainImage} />
           <div className={classes.overlay}>
-            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/fbf8724bf1c4f5532caa158bbd2b26a6338519fe83566d4eccc56869098403e8?apiKey=23427d989e77478fa1b7f364de68a73c&" alt={workspaceImgAlt} />
+            <img loading="lazy" src={SpaceTitle} alt={workspaceImgAlt} />
             <div className={classes.title}>{title}</div>
           </div>
         </div>
@@ -65,9 +68,9 @@ const Card: React.FC<CardProps> = (props) => {
                 <span className="day">/ Day</span>
               </span>
               <div className='flex' style={{ marginLeft: 20 }}>
-                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e9de1d3f53f65e5ef07de4dc601402f0dbe5e1680dc6c90cb44cb91ceeee79b4?apiKey=23427d989e77478fa1b7f364de68a73c&" alt="Ellipsis icon" className='w-2' />
-                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e9de1d3f53f65e5ef07de4dc601402f0dbe5e1680dc6c90cb44cb91ceeee79b4?apiKey=23427d989e77478fa1b7f364de68a73c&" alt="Ellipsis icon" className='w-2' />
-                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c14cbb27b1e28b307da755d0b469f9610451f3d5d13c92200f1dd508b159f10a?apiKey=23427d989e77478fa1b7f364de68a73c&" alt="Ellipsis icon" className='w-2' />
+                <img loading="lazy" src={RightArrowLight} alt="Ellipsis icon" className='w-2' />
+                <img loading="lazy" src={RightArrowLight} alt="Ellipsis icon" className='w-2' />
+                <img loading="lazy" src={RightArrowDark} alt="Ellipsis icon" className='w-2' />
               </div>
             </div>
           </div>
@@ -80,9 +83,9 @@ const Card: React.FC<CardProps> = (props) => {
                 <span className="day">/ 10 Days</span>
               </span>
               <div className='flex'>
-                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e9de1d3f53f65e5ef07de4dc601402f0dbe5e1680dc6c90cb44cb91ceeee79b4?apiKey=23427d989e77478fa1b7f364de68a73c&" alt="Ellipsis icon" className='w-2' />
-                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a45710eda3ce567b2ad98ba809ebb536ab5e8dfe680b8e3a57bc74da1ce084b8?apiKey=23427d989e77478fa1b7f364de68a73c&" alt="Ellipsis icon" className='w-2' />
-                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c14cbb27b1e28b307da755d0b469f9610451f3d5d13c92200f1dd508b159f10a?apiKey=23427d989e77478fa1b7f364de68a73c&" alt="Ellipsis icon" className='w-2' />
+                <img loading="lazy" src={RightArrowLight} alt="Ellipsis icon" className='w-2' />
+                <img loading="lazy" src={RightArrowLight} alt="Ellipsis icon" className='w-2' />
+                <img loading="lazy" src={RightArrowDark} alt="Ellipsis icon" className='w-2' />
               </div>
             </div>
           </div>

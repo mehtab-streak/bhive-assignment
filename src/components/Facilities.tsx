@@ -1,28 +1,28 @@
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/styles"
 
-import assets from "../assets";
-import ThemeContext from "../Theme/ThemeContext";
-import { useContext } from "react";
+import assets from "../assets"
+import ThemeContext from "../Theme/ThemeContext"
+import { useContext } from "react"
 
-const { Arrow } = assets;
+const { Arrow } = assets
 
 
 // Define the structure of a single facility object
 interface Facility {
-  iconSrc: string;
-  alt: string;
-  label: string;
+  iconSrc: string
+  alt: string
+  label: string
 }
 
 // Define the props for the Facilities component
 interface FacilitiesProps {
-  facilities: Facility[];
+  facilities: Facility[]
 }
 
 const Facilities: React.FC<FacilitiesProps> = (props) => {
   const { facilities } = props
   const classes = stylesheet()
-  const { isMobile } = useContext(ThemeContext);
+  const { isMobile } = useContext(ThemeContext)
 
   return (
     <div className={classes.root}>
@@ -55,7 +55,7 @@ const Facilities: React.FC<FacilitiesProps> = (props) => {
         </div>
       </section>
     </div>
-  );
+  )
 }
 
 const stylesheet = makeStyles({

@@ -23,9 +23,9 @@ const useFetch = <T>(url: string): FetchResult<T> => {
       setLoading(false)
     } catch (err: unknown) {
       if (err instanceof Error) {
-        setError(err.message);
+        setError(err.message)
       } else {
-        setError('An unknown error occurred');
+        setError('An unknown error occurred')
       }
       setLoading(false)
     }

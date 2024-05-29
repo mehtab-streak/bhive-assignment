@@ -1,14 +1,14 @@
-import { makeStyles } from '@material-ui/styles';
-import assets from "../assets";
-import ThemeContext from '../Theme/ThemeContext';
-import { useContext } from 'react';
+import { makeStyles } from '@material-ui/styles'
+import assets from "../assets"
+import ThemeContext from '../Theme/ThemeContext'
+import { useContext } from 'react'
 
-const { MobileApp, Arrow } = assets;
+const { MobileApp, Arrow, Playstore, Appstore } = assets
 
 const Footer = () => {
-  const classes = useStyles();
-  const currentYear = new Date().getFullYear();
-  const { isMobile } = useContext(ThemeContext);
+  const classes = useStyles()
+  const currentYear = new Date().getFullYear()
+  const { isMobile } = useContext(ThemeContext)
 
   return (
     <footer>
@@ -32,13 +32,13 @@ const Footer = () => {
             <div className={classes.buttons}>
               <img
                 loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/3cb3ba14e95ad383fc2ba1916f64d0f9393f2b40c921d7d86b7ef3b4d6d399c2?apiKey=23427d989e77478fa1b7f364de68a73c&"
+                src={Playstore}
                 alt="App Store Badge"
                 className={classes.badge}
               />
               <img
                 loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/cc751060f9dcd15d798cda9587bd96f39bb328ffee3cf1890dafad35f4a8e799?apiKey=23427d989e77478fa1b7f364de68a73c&"
+                src={Appstore}
                 alt="Google Play Badge"
                 className={classes.badge}
               />
@@ -50,8 +50,8 @@ const Footer = () => {
         © Copyright {currentYear}. Bhive Private Limited
       </div>
     </footer>
-  );
-};
+  )
+}
 
 const useStyles = makeStyles({
   footer: {
@@ -176,4 +176,4 @@ const useStyles = makeStyles({
   },
 })
 
-export default Footer;
+export default Footer
