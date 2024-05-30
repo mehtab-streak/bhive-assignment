@@ -18,6 +18,7 @@ import RightArrowLight from './right-arrow-light.svg'
 import RightArrowDark from './right-arrow-dark.svg'
 import Map from './map.png'
 import SpaceTitle from './space-title.svg'
+import SideHeroBg from '../assets/Vector-hero-bg.svg'
 
 export default {
   Logo,
@@ -40,4 +41,5 @@ export default {
   RightArrowLight,
   Map,
   SpaceTitle,
+  SideHeroBg,
 }

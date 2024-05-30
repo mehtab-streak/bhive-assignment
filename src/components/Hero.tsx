@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/styles'
 
 import assets from '../assets'
 
-const { Coworking, HeroBg } = assets
+const { Coworking, HeroBg, SideHeroBg } = assets
 
 const Hero = () => {
   const classes = useStyles()
@@ -39,21 +39,18 @@ const useStyles = makeStyles({
   container: {
     display: 'flex',
     gap: '1.25rem', // gap-5
-    paddingInline: '6rem', // px-24
     '@media (max-width: 640px)': {
       flexDirection: 'column-reverse', // sm:flex-col-reverse
-      paddingInline: '1.75rem', // sm:px-7
     },
     '@media (max-width: 768px)': {
       flexDirection: 'column-reverse', // max-md:flex-col
       gap: 0, // max-md:gap-0
-      paddingInline: '2.5rem', // md:px-10
     },
   },
   article: {
     display: 'flex',
     flexDirection: 'column',
-    width: '71%', // w-[71%]
+    width: '68%', // w-[71%]
     '@media (max-width: 768px)': {
       marginLeft: 0, // max-md:ml-0
       width: '100%', // max-md:w-full
@@ -93,14 +90,15 @@ const useStyles = makeStyles({
     letterSpacing: '-0.02em', // tracking-tighter
     color: '#1f2937', // text-primary-text
     textAlign: 'left',
-
-
+    paddingLeft: '6rem',
+    width: '70%',
     '@media (max-width: 640px)': {
-      marginTop: '0.25rem', // sm:mt-1
+      paddingLeft: '2rem',
+      marginTop: '2rem', // sm:mt-1
       fontSize: '1.25rem', // sm:text-xl
+      width: '100%',
     },
     '@media (min-width: 1024px)': {
-      textAlign: 'center',
       fontSize: '3rem', // sm:text-xl
     }
   },
@@ -108,12 +106,15 @@ const useStyles = makeStyles({
     color: '#FFBB00', // text-secondary-text
   },
   aside: {
+    background: `url(${SideHeroBg})`,
+    backgroundRepeat: 'no-repeat',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     marginLeft: '1.25rem', // ml-5
-    width: '29%', // w-[29%]
+    width: '32%', // w-[29%]
     '@media (max-width: 768px)': {
+      backgroundPosition: 'bottom',
       marginLeft: 0, // max-md:ml-0
       width: '100%', // max-md:w-full
     },
@@ -125,7 +126,6 @@ const useStyles = makeStyles({
     mixBlendMode: 'multiply', // mix-blend-multiply
     aspectRatio: '1 / 1',
     '@media (max-width: 768px)': {
-      marginTop: '2.5rem', // max-md:mt-10
     },
   },
 })

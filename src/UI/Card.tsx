@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { makeStyles } from '@material-ui/styles'
 import assets from '../assets'
 
@@ -20,7 +20,7 @@ export interface CardProps {
 }
 
 
-const Card: React.FC<CardProps> = (props) => {
+const Card: React.FC<CardProps> = memo((props) => {
   const classes = useStyles()
   const {
     title,
@@ -93,7 +93,7 @@ const Card: React.FC<CardProps> = (props) => {
       </div>
     </div>
   )
-}
+})
 
 
 const useStyles = makeStyles({
@@ -194,6 +194,10 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     marginTop: '-8px',
     margin: '0 12px',
+
+    '@media (max-width: 768px)': {
+      gap: 20,
+    },
   },
   section1: {
     display: 'flex',
